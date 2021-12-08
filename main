@@ -1,0 +1,9 @@
+import pandas
+
+data = pandas.read_csv("codename.csv")
+phonetic_alphabet = {row.letter:row.code for (index, row) in data.iterrows()}
+
+
+wanted_name = input("type something: ").upper()
+coded_name = [phonetic_alphabet[letter] for letter in wanted_name]
+print(coded_name)
